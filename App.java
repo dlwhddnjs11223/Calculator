@@ -1,19 +1,15 @@
 package Work;
 
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {//양의 정수 입력 받기
-
-
-
+        double[] results = new double[10]; // 연산의 결과를 저장할 배열
+        int i = 0;
+        int count = 10; // 연산의 결과가 저장된 배열의 마지막 index값
 
         Scanner sc = new Scanner(System.in);
-
-
         while (true) { // 반복문을 사용해서 연산을 반복
-
 
 
             System.out.print("첫 번째 숫자를 입력하세요: "); // 출력
@@ -48,13 +44,20 @@ public class App {
                 result = Number1 / Number2;
             }
 
-            if(Operation == '/' && Number1 < 1 ) {  // operation 값이 '/'이면서 Number1이 1 이하면
+            if (Operation == '/' && Number1 < 1) {  // operation 값이 '/'이면서 Number1이 1 이하면
                 System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다."); // 출력
             } else if (Operation == '/' && Number2 < 1) {    // operation 값이 '/'이면서 Number2이 1 이하면
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다."); // 출력
             } else {
                 System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
+
+                results[i] = result;
+                i = i+1;
+                System.out.println(i);
+                System.out.println(Arrays.toString(results));
+
             }
+
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)"); // 출력
             String exit = sc.next(); // exit에 입력값을 저장하고
