@@ -5,7 +5,7 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {//양의 정수 입력 받기
 
-        double[] results = new double[10]; // 연산의 결과를 저장할 배열
+        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열
         int i = 0; // count
 
 
@@ -51,22 +51,17 @@ public class App {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다."); // 출력
             } else {
                 System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
-                if (i > 9) { // 배열의 원소갯수가 10개를 초과하면
-                   for (int k = 1; k < 9; k++) { // 아래 구문을 반복한다.
 
-                       results[k] = results[k-1];   // 배열을 하나씩 앞으로 당긴다.
 
-                   }
-                   results[9] = result; // 빠져나와서 9번쨰 원소에 result값을 넣는다.
-                    System.out.println(Arrays.toString(results)); // 배열의 원소값
+                    results.add(result); // results 컬렉션에 result 값을 저장한다.
+                System.out.println(results.toString());
+
+                System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+                String remove = sc.next(); // remove에 입력값을 저장하고
+                if (remove.equals("remove")) { // remove값이 "remove"와 동일하면
+                    results.remove(0);  // 첫번째 원소를 삭제한다
+                    System.out.println(results.toString());
                 }
-                    results[i] = result; // results 배열에 result 값을 저장한다.
-                i = i+1;    // 인덱스 값을 증가시킨다.
-
-                 System.out.println(i); // 인덱스값
-                System.out.println(Arrays.toString(results)); // 배열의 원소값
-                System.out.println(results.length); // 배열의 원소갯수값
-
             }
 
 
