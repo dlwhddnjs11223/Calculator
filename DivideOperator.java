@@ -6,6 +6,6 @@ public class DivideOperator {
             throw new exception("양의 정수값을 입력했는지");
         } else if (b < 1 && b % 1 != 0) {
             throw new exception("양의 정수값을 입력했는지");
-        } else { return a/b;}
+        } else { return a/b; }
     }
 }

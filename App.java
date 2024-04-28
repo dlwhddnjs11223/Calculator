@@ -1,14 +1,14 @@
 package Work;
 
+import week03.WOrk.Calculator;
+
 import java.util.*;
 
 public class App {
     public static void main(String[] args) throws Exception {//양의 정수 입력 받기
         // 여기에 throws가 왜붙지?
+     ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new AddOperator(), new SubtractOperator(), new MultiplyOperator(), new DivideOperator());
 
-        Calculator calculator = new Calculator(new ArrayList<>());
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
-        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
 
 //        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열
 //        int i = 0; // count

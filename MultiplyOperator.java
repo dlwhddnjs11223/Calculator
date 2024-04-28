@@ -1,7 +1,9 @@
 package Work;
 
 public class MultiplyOperator {
-    public double operate(double a, double b) {
+
+
+    public double operate(int a, int b) {
         return a*b;
     }
 
