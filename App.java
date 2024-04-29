@@ -37,11 +37,14 @@ public class App {
 
 
             try{
-                calculator.calculate(Number1, Operation, Number2);
+                calculator.calculate(Number1, Operation, Number2); // 해당 구문을 일단 실행하고
 
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            } catch (Exception e) {     // 예외가 발생하면
+
+                System.out.println(e.getMessage());     // 예외 메시지를 출력한다.
+
             }
+
 
 
 //
@@ -77,14 +80,14 @@ public class App {
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next(); // remove에 입력값을 저장하고
                 if (remove.equals("remove")) { // remove값이 "remove"와 동일하면
-                    calculator.results.remove(0);  // 첫번째 원소를 삭제한다
+                    calculator.getResults().remove(0);  // 첫번째 원소를 삭제한다
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 String inquiry = sc.next(); // inquiry에 입력값을 저장하고
                 if (inquiry.equals("inquiry")) { // inquiry값이 "inquiry"와 동일하면
 
-                    for (Double number : calculator.results ) { // 해당 구문을 반복하고
+                    for (Double number : calculator.getResults()) { // 해당 구문을 반복하고
                         System.out.println(number); // 출력한다.
                     }
                 }

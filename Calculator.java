@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    List<Double> results = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션
+   private List<Double> results = new ArrayList<>(); // 캡슐화된 연산 결과를 저장하는 컬렉션
 
     public double calculate(double Num1, char Operation, double Num2) throws Exception {
         double result = 0;
@@ -31,8 +31,14 @@ public class Calculator {
             return result;
 
 
+
+        }
+        public List<Double> getResults() {
+        return results;
+        }
     }
-}
+
+
 
 class exception extends Exception {
     public exception(String type) {
