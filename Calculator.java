@@ -4,8 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-   private List<Double> results = new ArrayList<>(); // 캡슐화된 연산 결과를 저장하는 컬렉션
 
+    //필드
+
+   private List<Double> results; // 캡슐화된 연산 결과를 저장하는 컬렉션 선언과 초기화를 동시에
+   // 선언만 하고
+
+   // Calculator 인스턴스를 생성(new)할 때 생성자를 통해 연산 결과를 저장하고 있는 컬렉션 필드가 초기화 되도록 수정합니다.
+    // 생성자
+    public Calculator () {
+        results = new ArrayList<>(); // 밑에서 초기화를 했다.
+    }
+
+
+    //메서드
     public double calculate(double Num1, char Operation, double Num2) throws Exception {
         double result = 0;
 

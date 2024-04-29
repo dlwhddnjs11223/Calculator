@@ -44,9 +44,6 @@ public class App {
                 System.out.println(e.getMessage());     // 예외 메시지를 출력한다.
 
             }
-
-
-
 //
 //            if (Operation == '+') { // operation 값이 +면
 //                result = Number1 + Number2; // 다음 값을 result에 저장한다
@@ -76,11 +73,12 @@ public class App {
 //
 //                results.add(result); // results 컬렉션에 result 값을 저장한다.
 //                System.out.println(results.toString());
-
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next(); // remove에 입력값을 저장하고
                 if (remove.equals("remove")) { // remove값이 "remove"와 동일하면
+
                     calculator.removeResult();  // 첫번째 원소를 삭제한다
+
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
@@ -88,7 +86,6 @@ public class App {
                 if (inquiry.equals("inquiry")) { // inquiry값이 "inquiry"와 동일하면
 
                     System.out.println(calculator.getResults());  // 해당 필드를 조회한다.
-
 
                 }
 
