@@ -38,7 +38,9 @@ public class App {
                         double Number2 = intNumber2;    // Number2에 intNumber2을 저장
 
                         try {
-                            arithmeticCalculator.arithmeticCaculator(Number1, Operation, Number2); // 해당 구문을 일단 실행하고
+                            arithmeticCalculator.arithNumber1 = Number1;
+                            arithmeticCalculator.arithNumber2 = Number2;
+                            arithmeticCalculator.setOperator(Operation);// 해당 구문을 일단 실행하고
                         } catch (Exception e) {     // 예외가 발생하면
                             System.out.println(e.getMessage());     // 예외 메시지를 출력한다.
                         }

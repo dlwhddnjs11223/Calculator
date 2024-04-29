@@ -4,17 +4,27 @@ import java.util.List;
 
 public class ArithmeticCalculator extends Calculator {
 
+    //필드
 
-    public ArithmeticCalculator(List<Double> results) {
+    double firstNumber;
+    double secondNumber;
+
+
+
+    // 생성자
+
+    public ArithmeticCalculator(List<Double> results, char operator) {
         super(results);
+
+
         // 부모 클래스에 초기화가 필요한 컬렉션이 있어서 매개변수가 있는 생성자를 만들어줘야 하는듯? 맞는지 확인 필요
 
     }
 
-    public double arithmeticCaculator(double Num1, char Operator, double Num2) throws exception {
+    public double arithmeticCaculator(double Num1, double Num2) throws exception {
         double result = 0;
-        if (Operator == '+') { // operation 값이 +면
-            result = Num1 + Num2; // 다음 값을 result에 저장한다
+        if (this.Operator == '+') { // operation 값이 +면
+
         } else if (Operator == '-') {  // 상동
             result = Num1 - Num2;
         } else if (Operator == '*') {
