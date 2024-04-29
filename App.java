@@ -42,16 +42,25 @@ public class App {
             } else if (Operation == '*') {
                 result = Number1 * Number2;
             } else if (Operation == '/') {
+                if(Number1 < 1 ) {
+                    System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다.");
+                } else if (Number2 <1) {
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                } else{
                 result = Number1 / Number2;
+                }
+            } else {
+                System.out.println("사칙연산 값을 확인해주십시오");
             }
 
-            if (Operation == '/' && Number1 < 1) {  // operation 값이 '/'이면서 Number1이 1 이하면
-                System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다."); // 출력
-            } else if (Operation == '/' && Number2 < 1) {    // operation 값이 '/'이면서 Number2이 1 이하면
-                System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다."); // 출력
-            } else {
-                System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
+//            if (Operation == '/' && Number1 < 1) {  // operation 값이 '/'이면서 Number1이 1 이하면
+//                System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다."); // 출력
+//            } else if (Operation == '/' && Number2 < 1) {    // operation 값이 '/'이면서 Number2이 1 이하면
+//                System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다."); // 출력
+//            }
 
+
+                System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
 
                 results.add(result); // results 컬렉션에 result 값을 저장한다.
                 System.out.println(results.toString());
@@ -66,13 +75,10 @@ public class App {
                 String inquiry = sc.next(); // inquiry에 입력값을 저장하고
                 if (inquiry.equals("inquiry")) { // inquiry값이 "inquiry"와 동일하면
 
-                    for (Double number : results ) {
-                        System.out.println(number);
+                    for (Double number : results ) { // 해당 구문을 반복하고
+                        System.out.println(number); // 출력한다.
                     }
-
                 }
-
-            }
 
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)"); // 출력
