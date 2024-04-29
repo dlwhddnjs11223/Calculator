@@ -53,15 +53,25 @@ public class App {
                 System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
 
 
-                    results.add(result); // results 컬렉션에 result 값을 저장한다.
+                results.add(result); // results 컬렉션에 result 값을 저장한다.
                 System.out.println(results.toString());
 
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next(); // remove에 입력값을 저장하고
                 if (remove.equals("remove")) { // remove값이 "remove"와 동일하면
                     results.remove(0);  // 첫번째 원소를 삭제한다
-                    System.out.println(results.toString());
                 }
+
+                System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+                String inquiry = sc.next(); // inquiry에 입력값을 저장하고
+                if (inquiry.equals("inquiry")) { // inquiry값이 "inquiry"와 동일하면
+
+                    for (Double number : results ) {
+                        System.out.println(number);
+                    }
+
+                }
+
             }
 
 
