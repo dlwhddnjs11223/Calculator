@@ -3,11 +3,12 @@ package Work;
 import java.util.*;
 
 public class App {
-    public static void main(String[] args) {//양의 정수 입력 받기
+    public static void main(String[] args) throws Exception {//양의 정수 입력 받기
+    // 여기에 throws가 왜붙지?
+        Calculator calculator = new Calculator();
 
-        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열
-        int i = 0; // count
-
+//        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열
+//        int i = 0; // count
 
         Scanner sc = new Scanner(System.in);
         while (true) { // 반복문을 사용해서 연산을 반복
@@ -34,24 +35,33 @@ public class App {
             double Number2 = intNumber2;    // Number2에 intNumber2을 저장
 
 
-            double result = 0;
-            if (Operation == '+') { // operation 값이 +면
-                result = Number1 + Number2; // 다음 값을 result에 저장한다
-            } else if (Operation == '-') {  // 상동
-                result = Number1 - Number2;
-            } else if (Operation == '*') {
-                result = Number1 * Number2;
-            } else if (Operation == '/') {
-                if(Number1 < 1 ) {
-                    System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다.");
-                } else if (Number2 <1) {
-                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                } else{
-                result = Number1 / Number2;
-                }
-            } else {
-                System.out.println("사칙연산 값을 확인해주십시오");
+
+            try{
+                calculator.calculate(Number1, Operation, Number2);
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
+
+
+//
+//            if (Operation == '+') { // operation 값이 +면
+//                result = Number1 + Number2; // 다음 값을 result에 저장한다
+//            } else if (Operation == '-') {  // 상동
+//                result = Number1 - Number2;
+//            } else if (Operation == '*') {
+//                result = Number1 * Number2;
+//            } else if (Operation == '/') {
+//                if(Number1 < 1 ) {
+//                    System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다.");
+//                } else if (Number2 <1) {
+//                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+//                } else{
+//                result = Number1 / Number2;
+//                }
+//            } else {
+//                System.out.println("사칙연산 값을 확인해주십시오");
+//            }
 
 //            if (Operation == '/' && Number1 < 1) {  // operation 값이 '/'이면서 Number1이 1 이하면
 //                System.out.println("나눗셈 연산에서 분자(첫번째 정수)에 0이 입력될 수 없습니다."); // 출력
@@ -60,22 +70,21 @@ public class App {
 //            }
 
 
-                System.out.println("결과 : " + result);  // 그 외의 경우에 result 값을 출력
-
-                results.add(result); // results 컬렉션에 result 값을 저장한다.
-                System.out.println(results.toString());
+//
+//                results.add(result); // results 컬렉션에 result 값을 저장한다.
+//                System.out.println(results.toString());
 
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next(); // remove에 입력값을 저장하고
                 if (remove.equals("remove")) { // remove값이 "remove"와 동일하면
-                    results.remove(0);  // 첫번째 원소를 삭제한다
+                    calculator.results.remove(0);  // 첫번째 원소를 삭제한다
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 String inquiry = sc.next(); // inquiry에 입력값을 저장하고
                 if (inquiry.equals("inquiry")) { // inquiry값이 "inquiry"와 동일하면
 
-                    for (Double number : results ) { // 해당 구문을 반복하고
+                    for (Double number : calculator.results ) { // 해당 구문을 반복하고
                         System.out.println(number); // 출력한다.
                     }
                 }

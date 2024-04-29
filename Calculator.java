@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculator {
     List<Double> results = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션
 
-    public double calculate(int Num1, char Operation, int Num2) throws Exception {
+    public double calculate(double Num1, char Operation, double Num2) throws Exception {
         double result = 0;
 
         if (Operation == '+') { // operation 값이 +면
@@ -26,7 +26,8 @@ public class Calculator {
         } else {
             throw new exception("사칙연산값");
         }
-            results.add(result);
+        System.out.println("결과 : " + result);
+        results.add(result);
             return result;
 
 
@@ -35,7 +36,7 @@ public class Calculator {
 
 class exception extends Exception {
     public exception(String type) {
-        super(type+" 을 확인해주세요");
+        super(type+"을 확인해주세요");
     }
 
 }
