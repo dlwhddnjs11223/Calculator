@@ -36,6 +36,10 @@ public class Calculator {
         public List<Double> getResults() {
         return results;
         }
+
+        public void removeResult () { // 이 메서드를 실행하면
+        results.removeFirst(); // 해당 컬렉션의 첫번째 원소를 삭제한다.
+        }
     }
 
 
