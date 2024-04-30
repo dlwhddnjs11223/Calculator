@@ -1,10 +1,10 @@
 package Work;
 
-public class MultiplyOperator {
+public class MultiplyOperator implements operator {
 
 
-    public double operate(int a, int b) {
+    @Override
+    public double operate(double a, double b) throws Exception {
         return a*b;
     }
-
 }

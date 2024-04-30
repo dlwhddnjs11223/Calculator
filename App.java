@@ -7,7 +7,7 @@ public class App {
         // 여기에 throws가 왜붙지?
 
 
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new AddOperator(), new SubtractOperator(), new MultiplyOperator(), new DivideOperator());
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
 
 //        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열

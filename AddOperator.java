@@ -1,13 +1,14 @@
 package Work;
 
-import week03.WOrk.AddOperation;
 
 
-public class AddOperator {
+
+public class AddOperator implements operator {
 
 
-    public double operate(int a, int b) {
-
-        return a + b;
+    @Override
+    public double operate(double a, double b) throws Exception {
+        return a+b;
     }
 }
+

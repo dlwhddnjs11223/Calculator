@@ -9,11 +9,7 @@ public class Calculator {
 
     //필드
 
-    AddOperator add;
-    SubtractOperator sub;;
-    MultiplyOperator mul;
-    DivideOperator div;
-
+    operator oper; // 사칙연산 기호에 따라 변경해줄 연산 클래스 선언
 
     List<Double> results; // 캡슐화된 연산 결과를 저장하는 컬렉션 선언과 초기화를 동시에
     // 선언만 하고
@@ -24,9 +20,7 @@ public class Calculator {
     // 생성자
     public Calculator() {
         // 밑에서 초기화를 했다.
-
     }
-
     //메서드
 //    public double calculate(double Num1, char Operation, double Num2) throws Exception {
 //        double result = 0;
@@ -52,9 +46,6 @@ public class Calculator {
 //        results.add(result);
 //        return result;
 //    }
-
-
-
 
     public List<Double> getResults() {
         return results;
