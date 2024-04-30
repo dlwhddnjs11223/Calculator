@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CircleCalculator extends Calculator {
 
-
+    final double PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628;
     public CircleCalculator(List<Double> results) {
         this.Circleresults =  results;
     }
@@ -13,7 +13,7 @@ public class CircleCalculator extends Calculator {
 
         double result = 0;
 
-        double PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628;
+
 
         if (Radius <= 0) {
             throw new exception("양의 정수값을 입력했는지");
