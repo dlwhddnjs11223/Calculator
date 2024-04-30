@@ -1,14 +1,14 @@
 package Work;
 
-import week03.WOrk.Calculator;
-
 import java.util.*;
 
 public class App {
     public static void main(String[] args) throws Exception {//양의 정수 입력 받기
         // 여기에 throws가 왜붙지?
-     ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new AddOperator(), new SubtractOperator(), new MultiplyOperator(), new DivideOperator());
 
+
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new AddOperator(), new SubtractOperator(), new MultiplyOperator(), new DivideOperator());
+        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
 
 //        List<Double> results = new ArrayList<Double>(); // 연산의 결과를 저장할 배열
 //        int i = 0; // count
@@ -26,21 +26,19 @@ public class App {
 
                         System.out.print("첫 번째 숫자를 입력하세요: "); // 출력
                         int intNumber1 = sc.nextInt();  // 입력한 값을 int타입의 intNumber1에 저장한다.
-                        double Number1 = intNumber1;    // Number1에 intNumber1을 저장한다.
+                            // Number1에 intNumber1을 저장한다.
 
                         System.out.print("사칙연산 기호를 입력하세요: "); // 출력
                         // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
                         char charOperation = sc.next().charAt(0);   // 입력된 값을 char 타입의 charOperation에 저장
-                        char Operation = charOperation; // Operation에 operation을 저장
+                         // Operation에 operation을 저장
 
                         System.out.print("두 번째 숫자를 입력하세요: "); // 출력
                         int intNumber2 = sc.nextInt();  // 입력된 값을 int 타입의 intNumber2에 저장
-                        double Number2 = intNumber2;    // Number2에 intNumber2을 저장
+                          // Number2에 intNumber2을 저장
 
                         try {
-                            arithmeticCalculator.arithNumber1 = Number1;
-                            arithmeticCalculator.arithNumber2 = Number2;
-                            arithmeticCalculator.setOperator(Operation);// 해당 구문을 일단 실행하고
+                            arithmeticCalculator.arithmeticCaculator(intNumber1, charOperation, intNumber2); // 해당 구문을 일단 실행하고
                         } catch (Exception e) {     // 예외가 발생하면
                             System.out.println(e.getMessage());     // 예외 메시지를 출력한다.
                         }
@@ -63,10 +61,10 @@ public class App {
 
                         int intNumber3 = sc.nextInt();  // 입력한 값을 int타입의 intNumber1에 저장한다.
 
-                        double Number3 = intNumber3;    // Number1에 intNumber1을 저장한다.
+                           // Number1에 intNumber1을 저장한다.
 
                         try {
-                            circleCalculator.circleCalculator(Number3); // 해당 구문을 일단 실행하고
+                            circleCalculator.circleCalculator(intNumber3); // 해당 구문을 일단 실행하고
                         } catch (Exception e) {     // 예외가 발생하면
                             System.out.println(e.getMessage());     // 예외 메시지를 출력한다.
                         }
@@ -128,10 +126,3 @@ public class App {
         }
     }
 }
-
-
-
-
-
-
-

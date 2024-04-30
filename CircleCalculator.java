@@ -6,7 +6,7 @@ public class CircleCalculator extends Calculator {
 
 
     public CircleCalculator(List<Double> results) {
-        super(results);
+        this.Circleresults =  results;
     }
 
     public double circleCalculator(double Radius) throws Exception {
@@ -18,12 +18,10 @@ public class CircleCalculator extends Calculator {
         if (Radius <= 0) {
             throw new exception("양의 정수값을 입력했는지");
         }
-        result = (Radius * Radius) + PI;
+        result = (Radius * Radius) * PI;
         System.out.println("결과 : " + result);
         Circleresults.add(result);
         return result;
     }
 
 }
-
-
