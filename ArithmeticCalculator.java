@@ -1,6 +1,7 @@
 package Work;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class ArithmeticCalculator extends Calculator {
 
@@ -14,7 +15,7 @@ public class ArithmeticCalculator extends Calculator {
         this.results = results;
     }
 
-    public void setOper (operator oper) {
+    public void setOper(operator oper) {
         this.oper = oper;
     }
 
@@ -43,9 +44,22 @@ public class ArithmeticCalculator extends Calculator {
         result = this.oper.operate(Num1, Num2);
         System.out.println("결과 : " + result);
         this.results.add(result);
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println("입력 값보다 큰 값 조회");
+        double print = sc.nextDouble(); // //**여기서 double이 아닌 값이 입력됐을때 예외처리를 해주려면?
+        getPrint(print);
+
         return result;
+
+    }
+    //입력값보다 큰 값을 조회하는 메서드
+    public void getPrint (double printnumber)throws Exception{
+    this.results.stream().filter(number -> number > printnumber).forEach(number -> System.out.println(number + " "));
     }
 }
+
 
 interface operator {
     double operate(double a, double b) throws Exception;

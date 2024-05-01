@@ -25,7 +25,7 @@ public class App {
 
 
                         System.out.print("첫 번째 숫자를 입력하세요: "); // 출력
-                        int intNumber1 = sc.nextInt();  // 입력한 값을 int타입의 intNumber1에 저장한다.
+                        double intNumber1 = sc.nextDouble();  // 입력한 값을 int타입의 intNumber1에 저장한다.
                             // Number1에 intNumber1을 저장한다.
 
                         System.out.print("사칙연산 기호를 입력하세요: "); // 출력
@@ -34,7 +34,7 @@ public class App {
                          // Operation에 operation을 저장
 
                         System.out.print("두 번째 숫자를 입력하세요: "); // 출력
-                        int intNumber2 = sc.nextInt();  // 입력된 값을 int 타입의 intNumber2에 저장
+                        double intNumber2 = sc.nextDouble();  // 입력된 값을 int 타입의 intNumber2에 저장
                           // Number2에 intNumber2을 저장
 
                         try {
@@ -127,3 +127,4 @@ public class App {
     }
 }
 
+// 조회기능 추가
